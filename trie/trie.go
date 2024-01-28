@@ -1,4 +1,4 @@
-package main
+package trie
 
 import "fmt"
 import "container/list"
@@ -121,28 +121,4 @@ func (node *Node) Search(value string) bool {
 
 func (node *Node) Content() {
 	fmt.Println(node.Value)
-}
-
-/*
-1. Insertion
-2. Deletion
-3. Lookup
-*/
-func main() {
-	root_node := Node{
-		Value: "root",
-		Word:  false,
-		Edges: make(map[string]*Node),
-	}
-
-	root_node.Insert("app")
-	root_node.Insert("asx")
-	root_node.Insert("asp")
-	root_node.Insert("brad")
-	root_node.Insert("brady")
-	root_node.Insert("brap")
-	PrintNodes(&root_node)
-	root_node.Delete("asp")
-	PrintNodes(&root_node)
-	fmt.Println(root_node.Search("asp"))
 }
