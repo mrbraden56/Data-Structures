@@ -1,9 +1,12 @@
 package main
 
-import "DataStructures/trie"
-import "fmt"
+import (
+	"DataStructures/copy_on_write_trie"
+	"DataStructures/trie"
+	"fmt"
+)
 
-func main() {
+func run_trie() {
 	root_node := trie.Node{
 		Value: "root",
 		Word:  false,
@@ -20,4 +23,14 @@ func main() {
 	root_node.Delete("asp")
 	trie.PrintNodes(&root_node)
 	fmt.Println(root_node.Search("asp"))
+
+}
+
+func run_cow() {
+	var myCowTrie cow_trie.CowTrie
+	myCowTrie.Insert("abc", 0)
+}
+
+func main() {
+	run_cow()
 }
