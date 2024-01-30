@@ -29,6 +29,15 @@ func run_trie() {
 func run_cow() {
 	var myCowTrie cow_trie.CowTrie
 	myCowTrie.Insert("abc", 0)
+
+	root_node := cow_trie.Node{
+		Value: "root",
+		Word:  false,
+		Edges: make(map[string]*cow_trie.Node),
+	}
+	root_node.Insert("a", "Here")
+	root_node.Replace("a", "Not Here")
+	fmt.Println(root_node.Edges["a"])
 }
 
 func main() {
